@@ -1,9 +1,5 @@
 #!/usr/bin/python3
-toggle = True
-for alph in range(ord('z'), ord('a')-1, -1):
-    upper = alph -32
-    if toggle:
-        print(chr(alph), end="")
-    else:
-        print(chr(upper), end="")
-    toggle = not toggle
+for alph in range(122, 96, -1):
+    if alph % 2 != 0:
+        alph = alph -32
+    print('{}'.format(chr(alph)), end='')
