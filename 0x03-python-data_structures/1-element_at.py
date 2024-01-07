@@ -5,7 +5,5 @@ def element_at(my_list, idx):
     elif idx > len(my_list):
         return (None)
     else:
-        for i in range(len(my_list)):
-            if i == idx:
-                popped = my_list.pop(idx)
-        return (popped)
+        popped_element = my_list.pop(idx)
+    return (popped_element)
