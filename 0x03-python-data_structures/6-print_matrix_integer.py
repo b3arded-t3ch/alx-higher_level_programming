@@ -1,5 +1,10 @@
 #!/usr/bin/python3
 def print_matrix_integer(matrix=[[]]):
-    for row in matrix:
-        new_matrix = ' '.join(map(str, row))
-        print("{}".format(new_matrix))
+    for i in range(len(matrix)):
+        for j in range(len(matrix[i])):
+            print("{}".format(matrix[i][j]), end=' ')
+        print()
+   
+  # for row in matrix:
+   #     new_matrix = ' '.join(map(str, row))
+    #    print("{}".format(new_matrix))
