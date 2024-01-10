@@ -7,7 +7,7 @@ def best_score(a_dictionary):
         val_u.sort()
         big_gest = val_u[-1]
         for key, value in a_dictionary.items():
-            if a_dictionary[key] is None:
+            if value is None:
                 return (None)
-            elif a_dictionary[key] is big_gest:
+            elif value is big_gest:
                 return (key)
