@@ -1,15 +1,12 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    arabic_num = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000]
-    roman_num = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M']
+    rom_dict = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
 
-    i = 12
-    roman_numeral = ''
-    while roman_string != 0:
-        if arabic_num[i] <= roman_string:
-            roman_numeral += roman[i]
-            roman_string = roman_string - arabic_num[i]
-        else:
-            i = i -1
-    return (roman_numeral)
+    N = len(roman_string)
+    i = N - 1
+    output = 0
+    while i >= 0:
+        output += rom_dict[roman_string[i]]
+        i = i - 1
+    return (output)
 
