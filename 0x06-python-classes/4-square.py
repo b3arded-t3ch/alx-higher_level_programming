@@ -5,7 +5,7 @@
 class Square:
     """Models a square with size, area and ability to mutate the size"""
 
-    def __init__(self, size):
+    def __init__(self, size=0):
         """Initialises size attribute of the square"""
         self.__size = size
 
