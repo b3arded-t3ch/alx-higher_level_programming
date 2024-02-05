@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines an empty class"""
+"""Defines class of Geometry"""
 
 
 class BaseGeometry:
@@ -23,8 +23,13 @@ class BaseGeometry:
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
 
+
 class Rectangle(BaseGeometry):
-    """A child class of BaseGeometry"""
+    """A rectangle child of class BaseGeometry
+        Args:
+            width (int): The width of the new Rectangle.
+            height (int): The height of the new Rectangle.
+    """
     def __init__(self, width, height):
         """Initialising the attribuites of the sub class"""
         self.integer_validator("width", width)
