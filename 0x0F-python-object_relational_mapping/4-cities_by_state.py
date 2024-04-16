@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""Module that retrieves and prints all\
+        states from a MySQL database using SQLAlchemy."""
 
 import MySQLdb
 import sys

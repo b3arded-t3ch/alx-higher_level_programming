@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""Module that retrieves and prints the first state\
+        from a MySQL database using SQLAlchemy."""
 
 import MySQLdb
 import sys
