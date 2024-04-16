@@ -3,6 +3,7 @@
 import MySQLdb
 import sys
 
+
 def list_statesF(username, password, database, name):
     """
     displays all values in the states table of hbtn_0e_0_usa
@@ -15,12 +16,12 @@ def list_statesF(username, password, database, name):
     """
 
     db = MySQLdb.connect(
-            username=username,
-            passwd=password,
-            db=database,
-            host='localhost',
-            port=3306
-            )
+        username=username,
+        passwd=password,
+        db=database,
+        host='localhost',
+        port=3306
+    )
     mycursor = db.cursor()
     mycursor.execute("SELECT * FROM states ORDER BY id ASC")
     states = mycursor.fetchall()
@@ -36,4 +37,3 @@ def list_statesF(username, password, database, name):
         name = sys.argv[4]
 
         list_statesF(username, password, database, name)
-

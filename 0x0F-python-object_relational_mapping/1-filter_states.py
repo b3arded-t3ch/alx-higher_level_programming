@@ -3,6 +3,7 @@
 import MySQLdb
 import sys
 
+
 def list_statesN(username, password, database):
     """
      lists all states with a name starting with N (upper N)
@@ -13,17 +14,17 @@ def list_statesN(username, password, database):
         database = mysql database
     """
     db = MySQLdb.connect(
-            user=username,
-            passwd=password,
-            db=database,
-            host="localhost",
-            port=3306
-            )
+        user=username,
+        passwd=password,
+        db=database,
+        host="localhost",
+        port=3306
+    )
 
     mycursor = db.cursor()
 
     mycursor.execute("SELECT * FROM states ORDER BY id ASC")
-    
+
     states = mycursor.fetchall()
 
     for state in states:
@@ -38,4 +39,3 @@ def list_statesN(username, password, database):
         database = sys.argv[3]
 
         list_statesN(username, password, database)
-

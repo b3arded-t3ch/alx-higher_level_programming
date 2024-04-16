@@ -3,6 +3,7 @@
 import MySQLdb
 import sys
 
+
 def list_citis(username, password, database):
     """
     lists all cities from the database hbtn_0e_4_usa
@@ -12,20 +13,20 @@ def list_citis(username, password, database):
         database = mysql database
     """
     db = MySQLdb.connect(
-            user=username,
-            passwd=password,
-            db=database,
-            host='localhost',
-            port=3306
-            )
+        user=username,
+        passwd=password,
+        db=database,
+        host='localhost',
+        port=3306
+    )
     mycursor = db.cursor()
 
     sql_query = ("SELECT
-            cities.id, cities.name, states.name
-            FROM cities
-            JOIN states
-            ON cities.state_id = states.id
-            ORDER BY cities.id ASC")
+                 cities.id, cities.name, states.name
+                 FROM cities
+                 JOIN states
+                 ON cities.state_id=states.id
+                 ORDER BY cities.id ASC")
     mycursor.execute(sql_query)
     allCities = mycursor.fetchall()
 

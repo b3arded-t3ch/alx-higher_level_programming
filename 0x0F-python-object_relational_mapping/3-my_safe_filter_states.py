@@ -3,6 +3,7 @@
 import MySQLdb
 import sys
 
+
 def list_statesS(username, password, database, state_name):
     """
     displays all values in the states table of hbtn_0e_0_usa
@@ -14,14 +15,13 @@ def list_statesS(username, password, database, state_name):
         name = name to be matched
     """
     db = MySQLdb.connect(
-            user=username,
-            passwd=password,
-            db=database,
-            host='localhost',
-            port=3306
-            )
+        user=username,
+        passwd=password,
+        db=database,
+        host='localhost',
+        port=3306
+    )
     mycursor = db.cursor()
-
 
     sqlquery = ("SELECT * FROM states WHERE name = %s ORDER BY id ASC")
     mycursor.execute(sqlquery, (state_name,))

@@ -3,6 +3,7 @@
 import MySQLdb
 import sys
 
+
 def list_states(username, password, database):
     """
      lists all states from the database hbtn_0e_0_usa.
@@ -11,24 +12,26 @@ def list_states(username, password, database):
         password: mysql password
         database(string): mysql database
     """
-#connect to the database and get cursor object
+
+
+# connect to the database and get cursor object
 db = MySQLdb.connect(
-        user=username,
-        passwd=password,
-        db=database,
-        host="localhost",
-        port=3306
-        )
+    user=username,
+    passwd=password,
+    db=database,
+    host="localhost",
+    port=3306
+)
 mycursor = db.cursor()
 
-#cursor object executes sql query, fetches the result, and prints it
+# cursor object executes sql query, fetches the result, and prints it
 mycursor.execute("SELECT * FROM states ORDER BY id ASC")
 myresult = mycursor.fetchall()
 
 for result in myresult:
     print(result)
 
-#connector object closes connection to the database
+# connector object closes connection to the database
 db.close()
 
 if __name__ == "__main__":
