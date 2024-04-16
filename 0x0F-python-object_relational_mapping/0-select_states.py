@@ -7,13 +7,16 @@ import sys
 
 def list_states(username, password, database):
     """
-     lists all states from the database hbtn_0e_0_usa.
-     Args:
-        username(string): mysql username
-        password: mysql password
-        database(string): mysql database
-    """
+    Lists all states from the database hbtn_0e_0_usa.
 
+    Args:
+        username (str): MySQL username
+        password (str): MySQL password
+        database (str): MySQL database
+
+    Returns:
+        None
+    """
 
 # connect to the database and get cursor object
 db = MySQLdb.connect(
