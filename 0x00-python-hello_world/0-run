@@ -1,4 +1,2 @@
 #!/bin/bash
-PYFILE="print('Best School')"
-
-python3 -c "$PYFILE"
+python3 -c "print('Best School')"
